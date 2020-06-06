@@ -15,8 +15,31 @@ scenario:
   sectors: [E]
   simpl: ['']
   ll: ['copt']
-  clusters: [37, 128, 256, 512, 1024]
-  opts: [Co2L-3H]
+  clusters: [200]
+  opts: [
+    2H-EQ0.0c,
+    2H-EQ0.1c,
+    2H-EQ0.2c,
+    2H-EQ0.3c,
+    2H-EQ0.4c,
+    2H-EQ0.5c,
+    2H-EQ0.6c,
+    2H-EQ0.7c,
+    2H-EQ0.8c,
+    2H-EQ0.9c,
+    2H-EQ1.0c,
+    2H-EQ0.0,
+    2H-EQ0.1,
+    2H-EQ0.2,
+    2H-EQ0.3,
+    2H-EQ0.4,
+    2H-EQ0.5,
+    2H-EQ0.6,
+    2H-EQ0.7,
+    2H-EQ0.8,
+    2H-EQ0.9,
+    2H-EQ1.0,
+  ]
 
 countries: ['AL', 'AT', 'BA', 'BE', 'BG', 'CH', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'ME', 'MK', 'NL', 'NO', 'PL', 'PT', 'RO', 'RS', 'SE', 'SI', 'SK']
 
@@ -51,7 +74,7 @@ electricity:
 
   powerplants_filter: false # use pandas query strings here, e.g. Country not in ['Germany']
   custom_powerplants: false # use pandas query strings here, e.g. Country in ['Germany']
-  conventional_carriers: [nuclear, oil, OCGT, CCGT, coal, lignite, geothermal, biomass]
+  conventional_carriers: []
 
   # estimate_renewable_capacities_from_capacity_stats:
   #   # Wind is the Fueltype in ppm.data.Capacity_stats, onwind, offwind-{ac,dc} the carrier in PyPSA-Eur
@@ -185,12 +208,12 @@ costs:
 solving:
   options:
     formulation: kirchhoff
-    load_shedding: false
+    load_shedding: true
     noisy_costs: true
     min_iterations: 4
     max_iterations: 6
     clip_p_max_pu: 0.01
-    skip_iterations: false
+    skip_iterations: true
     track_iterations: false
     #nhours: 10
   solver:
@@ -198,8 +221,8 @@ solving:
     threads: 4
     method: 2 # barrier
     crossover: 0
-    BarConvTol: 1.e-5
-    FeasibilityTol: 1.e-6
+    BarConvTol: 1.e-4
+    FeasibilityTol: 1.e-4
     AggFill: 0
     PreDual: 0
     GURO_PAR_BARDENSETHRESH: 200
