@@ -17,7 +17,7 @@ scenario:
   ll: ['copt']
   clusters: [200]
   opts: [
-    2H-EQ0.0c,
+    2H,
     2H-EQ0.1c,
     2H-EQ0.2c,
     2H-EQ0.3c,
@@ -28,7 +28,7 @@ scenario:
     2H-EQ0.8c,
     2H-EQ0.9c,
     2H-EQ1.0c,
-    2H-EQ0.0,
+    2H,
     2H-EQ0.1,
     2H-EQ0.2,
     2H-EQ0.3,
@@ -221,11 +221,13 @@ solving:
     threads: 4
     method: 2 # barrier
     crossover: 0
-    BarConvTol: 1.e-4
-    FeasibilityTol: 1.e-4
+    BarConvTol: 1.e-3
+    FeasibilityTol: 1.e-3
     AggFill: 0
     PreDual: 0
     GURO_PAR_BARDENSETHRESH: 200
+    BarHomogeneous: 1
+    NumericFocus: 1
   # solver:
   #   name: cplex
   #   threads: 4
