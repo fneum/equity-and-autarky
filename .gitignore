@@ -1,0 +1,10 @@
+*__pycache__
+.snakemake
+.vscode
+dconf
+results
+*.ipynb_checkpoints
+*.ipynb
+summary
+*.nc
+*.log
