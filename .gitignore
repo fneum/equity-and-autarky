@@ -8,3 +8,5 @@ results
 summary
 *.nc
 *.log
+*.pdf
+graphics
