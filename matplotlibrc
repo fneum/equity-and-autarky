@@ -1,0 +1,5 @@
+font.family: sans-serif
+font.serif: Linux Libertine O
+font.sans-serif:  Ubuntu, Linux Biolinum O, DejaVu Sans
+image.cmap: viridis
+axes.prop_cycle : cycler('color', ['009682', 'a22223', '4664aa', 'fce500', 'a3107c', '8cb63c', '23a1e0'])
